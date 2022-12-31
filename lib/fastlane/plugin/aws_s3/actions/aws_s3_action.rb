@@ -92,6 +92,7 @@ module Fastlane
         client_cfg[:endpoint] = s3_endpoint if s3_endpoint
         client_cfg[:profile] = s3_profile if s3_profile
         client_cfg[:credentials] = Aws::Credentials.new(s3_access_key, s3_secret_access_key, s3_session_token) if s3_access_key && s3_secret_access_key
+        client_cfg[:force_path_style] = true
 
         s3_client = Aws::S3::Client.new(client_cfg)
 
